@@ -41,7 +41,7 @@ try {
       res.status(400).send("that icecream is already listed");
     }
   } catch (err) {
-      rollbar.error(err)
+      rollbar.critical(err)
     console.log(err)
   }
 })
