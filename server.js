@@ -20,7 +20,7 @@ const index =icecream.findIndex((icecream)=>{
 })
 try {
     if (index === -1 && type !== "") {
-      students.push(type);
+      icecream.push(type);
       res.status(200).send(icecream);
     } else if (type === "") {
       res.status(400).send("must provide an icecream type");
