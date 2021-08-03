@@ -15,8 +15,8 @@
     <section></section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script>
-        const addForm = document.querySelector('favIcecreamForm');
-        const icecreamInput = document.querySelector('iceCream');
+        const addForm = document.querySelector('#favIcecreamForm');
+        const icecreamInput = document.querySelector('#iceCream');
         const container = document.querySelector('section');
 
         function submitHandler(evt){
@@ -24,7 +24,7 @@
             console.log('deeznuts');
 
             axios
-                .post('/api/icecream-favorites',{type:icecreamInput.value})
+                .post('/api/icecream-favorites',{type: icecreamInput.value})
                 .then(res => {
                     container.innerHTML =''
                     icecreamInput.value = ''
@@ -34,7 +34,7 @@
                     })
                 })
                 .catch(err => {
-    nameInput.value = ''
+    icecreamInput.value = ''
 
     const notif = document.createElement('aside')
     notif.innerHTML = `<p>${err.response.data}</p>
@@ -48,7 +48,7 @@
     })
 })
         }
-  addForm.addEventListener('submit', submitHandler)
+  favIcecreamForm.addEventListener('submit', submitHandler)
     </script>
 </body>
 </html>

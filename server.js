@@ -18,14 +18,16 @@ app.get('/', function(req,res){
     res.sendFile(path.join(__dirname, '/index.html'))
 })
 
-app.post('/api/students', function(req,res){
+app.post('/api/icecream-favorites', function(req,res){
     let {type} =req.body;
     console.log(type)
+    const index =icecream.findIndex((icecream)=>{
+        return icecream === type
 })
 
-const index =icecream.findIndex((icecream)=>{
-    return icecream === icecream
-})
+// const index =icecream.findIndex((icecream)=>{
+//     return icecream === type
+// })
 try {
     if (index === -1 && type !== "") {
       icecream.push(type);
@@ -42,6 +44,7 @@ try {
       rollbar.error(err)
     console.log(err)
   }
+})
 const port =process.env.PORT ||5040
 app.listen(port, function(){
     console.log('Server is up and running')
