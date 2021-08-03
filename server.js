@@ -1,6 +1,15 @@
 const express = require ('express');
 const app = express();
 const path = require('path');
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '0144ed4b7fbb4cfb863b49dbacc2a459',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('yasss!')
 
 app.use(express.json());
 

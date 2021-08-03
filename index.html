@@ -10,7 +10,7 @@
     <h1>Lab Practice with Rollback</h1>
     <form id="favIcecreamForm">
         <input type="text" placeholder="Enter icecream flavor..." id="iceCream">
-        <button>Add To Favorites</button>
+        <button id="icecreamButton">Add To Favorites</button>
     </form>
     <section></section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
@@ -49,7 +49,7 @@
 })
         }
 
-        addForm.addEventListener('submit', submitHandler)
+        addForm.addEventListener('click', submitHandler)
     </script>
 </body>
 </html>
