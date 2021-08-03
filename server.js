@@ -16,7 +16,7 @@ app.post('/api/students', function(req,res){
 })
 
 const index =icecream.findIndex((icecream)=>{
-    return icecream === type
+    return icecream === icecream
 })
 try {
     if (index === -1 && type !== "") {
