@@ -28,7 +28,7 @@ try {
       res.status(400).send("that icecream is already listed");
     }
   } catch (err) {
-    // do something
+    console.log(err)
   }
 const port =process.env.PORT ||5040
 app.listen(port, function(){
