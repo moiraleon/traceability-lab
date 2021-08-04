@@ -34,14 +34,14 @@ try {
       rollbar.info('An icecream has been added')
       res.status(200).send(icecream);
     } else if (type === "") {
-        rollbar.error('Someone entered an invalid input')
+        rollbar.critical('Someone entered an invalid input')
       res.status(400).send("must provide an icecream type");
     } else {
         rollbar.error('Someone has entered an already listed input')
       res.status(400).send("that icecream is already listed");
     }
   } catch (err) {
-      rollbar.critical(err)
+      rollbar.error('testing for critical error')
     console.log(err)
   }
 })
